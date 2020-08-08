@@ -1,6 +1,6 @@
 {
   "name": "livereload-js",
-  "version": "3.3.1",
+  "version": "3.3.1+ses",
   "description": "LiveReload JS client - auto reload browser on changes",
   "main": "dist/livereload.js",
   "module": "src/startup.js",
@@ -30,7 +30,7 @@
     "lint": "eslint src test/*_test.js version-bower.js",
     "test": "mocha --require @babel/register test/*_test.js",
     "test-manual": "NODE_ENV=production watchify -v -t envify -t babelify -o test/html/browserified/bundle.js test/html/browserified/main.js",
-    "build": "NODE_ENV=production browserify -t envify -t babelify src/startup.js > dist/livereload.js",
+    "build": "NODE_ENV=production browserify -t envify src/startup.js > dist/livereload.js",
     "minify": "NODE_ENV=production terser -c -m -- dist/livereload.js > dist/livereload.min.js",
     "version-bower": "node version-bower.js",
     "preversion": "npm run lint && npm test",
